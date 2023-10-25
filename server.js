@@ -11,13 +11,13 @@ const highWaterMark =  2;
 // callback é async agora!
 app.get('/audio', async (req, res) => {
 
-    const filePath = './audio.wav';
+    const filePath = './audio.mp4';
     const stat = await getStat(filePath);
     console.log(stat);
 
     // informações sobre o tipo do conteúdo e o tamanho do arquivo
     res.writeHead(200, {
-        'Content-Type': 'audio/wav',
+        'Content-Type': 'audio/mp4',
         'Content-Length': stat.size
     });
 
